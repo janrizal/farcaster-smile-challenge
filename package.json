@@ -1,0 +1,13 @@
+{
+  "name": "farcaster-smile-app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "dependencies": {
+    "@farcaster/hub-nodejs": "^0.15.6",
+    "@tensorflow-models/blazeface": "^0.1.0",
+    "@tensorflow/tfjs": "^4.22.0",
+    "ethers": "^6.15.0",
+    "ipfs-http-client": "^60.0.1"
+  }
+}

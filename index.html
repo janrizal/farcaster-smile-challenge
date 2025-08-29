@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farcaster Smile Challenge</title>
+
+  <!-- Ethers.js for wallet/web3 -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+  
+  <!-- Face API for smile detection -->
+  <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+    .container {
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 24px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+    button:not(:disabled) {
+      background: #ff6b6b;
+      color: white;
+    }
+    button:not(:disabled):hover {
+      background: #ff5252;
+    }
+    .status, .score {
+      background: rgba(255,255,255,0.15);
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: bold;
+      white-space: pre-wrap;
+    }
+    video {
+      width: 100%;
+      max-width: 400px;
+      border: 3px solid white;
+      border-radius: 12px;
+      display: block;
+      margin: 20px auto;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🙂 Farcaster Smile Challenge</h1>
+    <p>Smile for the camera and earn testnet rewards!</p>
+
+    <div class="status" id="status">Welcome! Connect your wallet to start.</div>
+
+    <button id="connectBtn">Connect Wallet</button>
+    <button id="connectFarcasterBtn" disabled>Connect Farcaster</button>
+
+    <video id="camera" autoplay playsinline class="hidden"></video>
+
+    <button id="captureBtn" disabled>📸 Capture My Smile</button>
+
+    <div class="score hidden" id="score"></div>
+    <button id="postBtn" class="hidden">Post to Farcaster</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
